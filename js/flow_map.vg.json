@@ -1,9 +1,9 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 800,
-  "height": 500,
+  "width": 1000,
+  "height": 600,
   "title": "Total Australia Livestock Exports from 2016—2020",
-  "projection": {"type": "equalEarth"},
+  "projection": {"type": "equalEarth", "rotate":[-150,0,0]},
   "layer": [
     {
       "data": {
@@ -45,7 +45,7 @@
       },
       "transform": [
         {"joinaggregate": [{
-       "op": "average",
+       "op": "sum",
        "field": "Quantity",
        "as": "Total Livestock Exports"
       }],
@@ -67,7 +67,7 @@
         "strokeWidth":{
           "field": "Total Livestock Exports",
           "type": "quantitative"}
-          
+
       }
     }
   ]
